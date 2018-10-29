@@ -55,10 +55,7 @@ const hobos = [
     `Gila Monster Jr.`,
     `Irontrousers the Strong`,
     `'X,' the Anonymous Man or Woman`,
-    `Orphaned Reynaldo,
-      the Child with Haunting Eyes
-      (while there were children hoboes,
-        Reynaldo took this when he was 45; prior to this, he was known as...[See #58])`,
+    `Orphaned Reynaldo, the Child with Haunting Eyes (while there were children hoboes, Reynaldo took this when he was 45; prior to this, he was known as...[See #58])`,
     `Reynaldo Reynaldoson, Who Will One Day Kill His Father`,
     `Thoughtless Harry Hsu`,
     `Clinical Psychiatrist Huga Rivera`,
@@ -146,8 +143,7 @@ const hobos = [
     `Robert the Wee`,
     `Robert Fits-in-a-Case`,
     `Robert Eats-for-Free`,
-    `Robert Is-He-an-Elf?
-      (The seven Silk brothers, all named Robert, were also kown for the small stature and predictable bitterness.)`,
+    `Robert Is-He-an-Elf? (The seven Silk brothers, all named Robert, were also kown for the small stature and predictable bitterness.)`,
     `Dennis Big-Ear Foxillustration`,
     `Jethro the Pagan`,
     `Asterix the Gaulillustration`,
@@ -486,8 +482,7 @@ const hobos = [
     `Tab-Collar Dix`,
     `George Slay, the Duck Throttler`,
     `Eldon Waxhat, the Waterproof Man`,
-    `Timely Clayton, the Human Wristwatch
-      (so named not because of this punctuality, but because one arm was significantly shorter than the other.)`,
+    `Timely Clayton, the Human Wristwatch (so named not because of this punctuality, but because one arm was significantly shorter than the other.)`,
     `Both Dakotas Dave`,
     `Duke Jermiah Choo-Choo`,
     `Transistorized Maximillian, the Hobo Cyborg`,
