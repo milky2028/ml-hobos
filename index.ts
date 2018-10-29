@@ -8,10 +8,18 @@ const charIndex = uniqueChars.map((char: string, i: number) => {
     return { [char]: i++ };
 });
 
-const stringToInt = (input: string) => {
+const stringToInt = (input: string): number[] => {
     return input.split('').map((item) => {
       const val = charIndex.find((char) => item === Object.keys(char)[0])!;
       return val[item];
     });
 };
+
+const intToString = (ints: number[]): string => {
+    return ints.map((int) => {
+      const val = charIndex.find((char) => int === Object.values(char)[0])!;
+      return Object.keys(val)[0];
+    }).join('');
+  };
+
 const numHobos = hobos.map((hobo) => stringToInt(hobo));
