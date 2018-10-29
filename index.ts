@@ -25,7 +25,15 @@ const intToString = (ints: number[]): string => {
 const seqLength = 30;
 // const hoboLen = hobos.map((hobo) => hobo.length);
 const numHobos = hobos.map((hobo) => {
-    return (stringToInt(hobo).length > 30) ? stringToInt(hobo).slice(0, 30) : false;
+    if (stringToInt(hobo).length > seqLength) {
+        return stringToInt(hobo).slice(0, seqLength);
+    } else {
+        const charInt = stringToInt(hobo);
+        for (let i = charInt.length; i < seqLength; i++) {
+            charInt.push(0);
+          }
+        return charInt;
+    }
 });
 
 console.log(numHobos);
