@@ -27,7 +27,7 @@ const intToString = (ints: number[]): string => {
         .join('');
   };
 
-const seqLength = 30;
+const seqLength = 31;
 // const hoboLen = hobos.map((hobo) => hobo.length);
 const numHobos = hobos.map((hobo) => {
     if (stringToInt(hobo).length > seqLength) {
