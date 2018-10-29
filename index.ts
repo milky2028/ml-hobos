@@ -3,7 +3,7 @@ import '@tensorflow/tfjs-node';
 import hobos from './hobos';
 
 const allChars = hobos.flatMap((hobo: string) => hobo.split(''));
-const uniqueChars = [...new Set(allChars)];
+const uniqueChars = [...new Set(['reserved', ...allChars])];
 const charIndex = uniqueChars.map((char: string, i: number) => {
     return { [char]: i++ };
 });
