@@ -22,4 +22,10 @@ const intToString = (ints: number[]): string => {
     }).join('');
   };
 
-const numHobos = hobos.map((hobo) => stringToInt(hobo));
+const seqLength = 30;
+// const hoboLen = hobos.map((hobo) => hobo.length);
+const numHobos = hobos.map((hobo) => {
+    return (stringToInt(hobo).length > 30) ? stringToInt(hobo).slice(0, 30) : false;
+});
+
+console.log(numHobos);
