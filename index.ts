@@ -28,7 +28,8 @@ const intToString = (ints: number[]): string => {
   };
 
 const seqLength = 31;
-// const hoboLen = hobos.map((hobo) => hobo.length);
+const hoboLen = hobos.map((hobo) => hobo.length);
+const maxLength = Math.max(...hoboLen);
 const numHobos = hobos.map((hobo) => {
     if (stringToInt(hobo).length > seqLength) {
         return stringToInt(hobo).slice(0, seqLength);
@@ -41,4 +42,27 @@ const numHobos = hobos.map((hobo) => {
     }
 });
 
-console.log(numHobos);
+const inputsAndTargets = numHobos.map((hobo) => {
+    return { input: intToString(hobo.slice(0, hobo.length - 1)), target: intToString(hobo.slice(1)) };
+});
+
+// console.log(intToString(inputsAndTargets[0].input));
+// console.log(numHobos[0]);
+
+// const model = tf.sequential();
+// model.add(tf.layers.lstm({
+//     inputShape: [seqLength - 1, hobos.length],
+//     returnSequences: true,
+//     units: 128,
+// }));
+
+// model.add(tf.layers.dropout({ rate: 0.2 }));
+
+// model.add(tf.layers.lstm({
+//     returnSequences: false,
+//     units: 128
+//   }));
+// model.add(tf.layers.dropout({ rate: 0.2 }));
+// model.add(tf.layers.dense({ units: hobos.length, activation: 'softmax' }));
+
+// model.compile({loss: 'categoricalCrossentropy', optimizer: tf.train.rmsprop(0.002)});
