@@ -4,47 +4,43 @@ import hobos from './hobos';
 
 const allChars = hobos.flatMap((hobo: string) => hobo.split(''));
 const uniqueChars = [...new Set(['reserved', ...allChars])];
-const charIndex = uniqueChars.map((char: string, i: number) => {
-    return { [char]: i++ };
-});
+const charIndex = uniqueChars.map((char: string, i: number) => ({ [char]: i++ }));
 
-const stringToInt = (input: string): number[] => {
-    return input
-        .split('')
-        .map((item) => {
-            const val = charIndex.find((char) => item === Object.keys(char)[0])!;
-            return val[item];
-        });
-};
+const stringToInt = (input: string): number[] =>
+  input.split('').map((item) => {
+    const val = charIndex.find((char) => item === Object.keys(char)[0])!;
+    return val[item];
+  });
 
-const intToString = (ints: number[]): string => {
-    return ints
-        .filter((item) => item !== 0)
-        .map((int) => {
-            const val = charIndex.find((char) => int === Object.values(char)[0])!;
-            return Object.keys(val)[0];
-        })
-        .join('');
-  };
+const intToString = (ints: number[]): string =>
+  ints
+    .filter((item) => item !== 0)
+    .map((int) => {
+      const val = charIndex.find((char) => int === Object.values(char)[0])!;
+      return Object.keys(val)[0];
+    })
+    .join('');
 
-const seqLength = 31;
+const seqLength = 32;
 const hoboLen = hobos.map((hobo) => hobo.length);
-const maxLength = Math.max(...hoboLen);
 const numHobos = hobos.map((hobo) => {
-    if (stringToInt(hobo).length > seqLength) {
-        return stringToInt(hobo).slice(0, seqLength);
-    } else {
-        const charInt = stringToInt(hobo);
-        for (let i = charInt.length; i < seqLength; i++) {
-            charInt.push(0);
-          }
-        return charInt;
+  if (stringToInt(hobo).length > seqLength) {
+    return stringToInt(hobo).slice(0, seqLength);
+  } else {
+    const charInt = stringToInt(hobo);
+    for (let i = charInt.length; i < seqLength; i++) {
+      charInt.push(0);
     }
+    return charInt;
+  }
 });
 
-const inputsAndTargets = numHobos.map((hobo) => {
-    return { input: intToString(hobo.slice(0, hobo.length - 1)), target: intToString(hobo.slice(1)) };
-});
+const inputsAndTargets = numHobos.map((hobo) => ({
+  input: hobo.slice(0, hobo.length - 1),
+  target: hobo.slice(1)
+}));
+
+console.log(inputsAndTargets[1]);
 
 // console.log(intToString(inputsAndTargets[0].input));
 // console.log(numHobos[0]);
