@@ -24,11 +24,11 @@ const intToString = (ints: number[]): string =>
 const seqLength = 32;
 const hoboLen = hobos.map((hobo) => hobo.length);
 const numHobos = hobos.map((hobo) => {
-  if (stringToInt(hobo).length > seqLength) {
+  if (hobo.length > seqLength) {
     return stringToInt(hobo).slice(0, seqLength);
   } else {
     const charInt = stringToInt(hobo);
-    for (let i = charInt.length; i < seqLength; i++) {
+    for (let i = stringToInt(hobo).length; i < seqLength; i++) {
       charInt.push(0);
     }
     return charInt;
